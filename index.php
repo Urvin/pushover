@@ -13,7 +13,7 @@ require_once 'pushover.class.php';
 //----------------------------------------------------------------------------//
 
 $lPushover = new Pushover('Write application token here');
-$lPushover->userToken = 'scecify user token';
+$lPushover->userToken = 'specify user token';
 $lPushover->notificationMessage = 'Notification message';
 
 $lPushover->userDevice = 'specify_user_device';
@@ -37,4 +37,3 @@ catch (PushoverException $aException)
 	echo '</ul>', PHP_EOL;
 }
 
-?>
