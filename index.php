@@ -12,16 +12,20 @@ require_once 'pushover.class.php';
 
 //----------------------------------------------------------------------------//
 
-$lPushover = new Pushover('Write application token here');
-$lPushover->userToken = 'scecify user token';
-$lPushover->notificationMessage = 'Notification message';
+// Required params
+$lPushover = new Pushover('application_token');
+$lPushover->userToken = 'user_token';
+$lPushover->notificationMessage = 'notification_text';
 
-$lPushover->userDevice = 'specify_user_device';
-$lPushover->notificationTitle = 'specify notification_title';
-$lPushover->notificationPriority = 0;
+// Addtitional params
+$lPushover->userDevice = 'user_device';
+$lPushover->notificationTitle = 'notification_title';
+$lPushover->notificationPriority = 0; // 0 is default, 1 - high priority, -1 - quiet notification
 $lPushover->notificationTimestamp = time();
 $lPushover->notificationUrl = 'http://google.com';
 $lPushover->notificationUrlTitle = 'Search Google!';
+
+//----------------------------------------------------------------------------//
 
 try
 {
@@ -36,5 +40,7 @@ catch (PushoverException $aException)
 		echo '<li>', $lMessage, '</li>', PHP_EOL;
 	echo '</ul>', PHP_EOL;
 }
+
+//----------------------------------------------------------------------------//
 
 ?>
